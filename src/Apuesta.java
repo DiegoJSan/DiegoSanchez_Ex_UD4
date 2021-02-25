@@ -1,4 +1,6 @@
-
+/**
+ * Importar las clases necesarias
+ */
 import javax.swing.DefaultListModel;
 import javax.swing.JDialog;
 import javax.swing.WindowConstants;
@@ -8,10 +10,15 @@ import javax.swing.WindowConstants;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+/**Clase que representa un sistema de apuestas
+ * 
+ * @author Diego Jesús Sánchez Del Corral - 1 DAW -- 25/02/21
+ */
 public class Apuesta extends javax.swing.JFrame {
 
-   
+    /**
+     * Método para iniciar la apuesta
+     */
     public Apuesta() 
     {
         initComponents();
@@ -120,7 +127,10 @@ public class Apuesta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Método para generar ventana gráfica con sus caractaristicas
+     * @param evt Parámetro del Método modificable
+     */
     private void bNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNuevoActionPerformed
         crearPartido agregarpartido = new crearPartido(this);
         agregarpartido.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -129,23 +139,37 @@ public class Apuesta extends javax.swing.JFrame {
         agregarpartido.setTitle("Agregar nuevo partido");
         agregarpartido.setVisible(Boolean.TRUE);
     }//GEN-LAST:event_bNuevoActionPerformed
-
+    /**
+     * Método para eliminar partido apostado
+     * @param evt Parámetro del Método modificable
+     */
     private void bEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEliminarActionPerformed
         borrarPartido(listaQuiniela.getSelectedIndex());
     }//GEN-LAST:event_bEliminarActionPerformed
-
+    /**
+     * Método para resetear apuesta
+     * @param evt Parámetro del Método modificable
+     */
     private void bResetearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bResetearActionPerformed
         DefaultListModel modelovacio = new DefaultListModel();
         this.listaQuiniela.setModel(modelovacio);
         this.listaResultados.setModel(modelovacio);
     }//GEN-LAST:event_bResetearActionPerformed
 
-   
+    /**
+     * Método que retorna números aleatorios
+     * @param n1 Parámetro del Método modificable
+     * @param n2 Parámetro del Método modificable
+     * @return Nos devuelve el valor del método
+     */
     public int cualquiera(int n1, int n2)
     {
         return (int)Math.floor((Math.random()*(n2-n1+1) + n1));
     }
-    
+    /**
+     * Método que realiza un bucle con diferentes opciones de resultados
+     * @param evt Parámetro del Método modificable
+     */
     private void bRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRealizarActionPerformed
         DefaultListModel modeloquinielaresuelta = new DefaultListModel();
 
@@ -172,7 +196,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modeloquinielaresuelta);
     }//GEN-LAST:event_bRealizarActionPerformed
 
-    
+    /**
+     * Método que realiza un bucle 
+     * @param partido Parámetro del Método modificable que define el partido
+     */
     public void partidoNuevo(String partido)
     {
         DefaultListModel modelonuevo = new DefaultListModel();
@@ -186,7 +213,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaQuiniela.setModel(modelonuevo);
     }
     
-  
+    /**
+     * Método que realiza varios bucles
+     * @param indice Parámetro del Método modificable 
+     */
     public void borrarPartido(int indice)
     {
         DefaultListModel modelonuevoquiniela = new DefaultListModel();
@@ -212,7 +242,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modelonuevoresultados);
     }
     
-   
+    /**
+     * Método para saber cuando se realliza una apuesta
+     * @param args Parámetro del Método modificable
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -245,7 +278,9 @@ public class Apuesta extends javax.swing.JFrame {
             }
         });
     }
-
+    /**
+     * Declaración de variables
+     */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bEliminar;
     private javax.swing.JButton bNuevo;
