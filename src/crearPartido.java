@@ -1,21 +1,31 @@
-
+/**
+ * Importar las clases necesarias
+ */
 import java.awt.event.KeyEvent;
 
 
-
+/**Clase que representa los partidos
+ * 
+ * @author Diego Jesús Sánchez Del Corral - 1 DAW -- 25/02/21
+ */
 public class crearPartido extends javax.swing.JFrame
 {
    
     
     private Apuesta v;
     
-   
+    /**
+    * 
+    */
     public crearPartido() 
     {
         initComponents();
     }
 
-   
+    /**
+     * Método para apostar por partido
+     * @param ventana Parámetro del Método modificable
+     */
     public crearPartido(Apuesta ventana) 
     {
         initComponents();
@@ -69,18 +79,29 @@ public class crearPartido extends javax.swing.JFrame
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Método para aadir partido
+     * @param p Parámetro del Método modificable
+     */
+    
+    
     public void añadePartido(String p)
     {
         v.partidoNuevo(p);
         tPartido.setText("");
         tPartido.requestFocus();
     }
-    
+    /**
+     * Método para aadir partido a la apuesta
+     * @param evt Parámetro del Método modificable
+     */
     private void bAgregarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarPartidoActionPerformed
         añadePartido(tPartido.getText());
     }//GEN-LAST:event_bAgregarPartidoActionPerformed
-
+    /**
+     * Método para aadir partido a la apuesta
+     * @param evt Parámetro del Método modificable
+     */
     private void tPartidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tPartidoKeyPressed
         if( evt.getKeyCode() == KeyEvent.VK_ENTER )
         {
@@ -88,7 +109,10 @@ public class crearPartido extends javax.swing.JFrame
         }
     }//GEN-LAST:event_tPartidoKeyPressed
 
-    
+    /**
+     * Método para cargar la apuesta
+     * @param args Parámetro del Método modificable
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -121,7 +145,9 @@ public class crearPartido extends javax.swing.JFrame
             }
         });
     }
-
+    /**
+     * Declaración de variables del código
+     */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAgregarPartido;
     private javax.swing.JLabel jLabel1;
